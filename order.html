@@ -375,7 +375,8 @@
 <div class="container">
   <div class="form-card">
 
-    <form id="order-form" novalidate>
+<form id="order-form" action="https://formspree.io/f/maqgnzjg" method="POST" novalidate>
+  <input type="hidden" name="_subject" value="New Thread & Oak Pickup Request">
 
       <!-- ── Contact ── -->
       <div class="section">
@@ -640,8 +641,7 @@
     // Show success
     document.getElementById('order-form').style.display = 'none';
     document.getElementById('success-msg').style.display = 'block';
-    window.scrollTo({ top: 0, behavior: '
-smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
 
