@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    CSP note: For production, add a Content-Security-Policy meta tag or HTTP header.
+    Example header (set at hosting/CDN level):
+      Content-Security-Policy: default-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; script-src 'self'; form-action https://formspree.io;
+    GitHub Pages doesn't support custom HTTP headers natively — use Cloudflare or Netlify for CSP enforcement.
+  -->
+
+  <title>Start Your Order — Thread & Oak Laundry Co.</title>
+
+  <!-- crossorigin added for CORS compliance with font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1B2A4A;
+      --cream:  #F5F0E8;
+      --gold:   #C9A84C;
+      --mist:   #E8E2D6;
+      --slate:  #5A6A7A;
+      --white:  #FFFFFF;
+      --error:  #B94040;
+      --radius: 6px;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--navy);
+      padding: 28px 24px 24px;
+      text-align: center;
+    }
+
+    .wordmark {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .wordmark span { color: var(--gold); }
+
+    .tagline {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--mist);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .rule {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--navy);
+      padding: 0 24px 36px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--cream);
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--mist);
+      font-size: 0.9rem;
+      font-weight: 300;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── Form container ── */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    .form-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 36px 40px;
+      margin-top: -20px;
+      box-shadow: 0 4px 24px rgba(27, 42, 74, 0.10);
+    }
+
+    @media (max-width: 540px) {
+      .form-card { padding: 28px 20px; }
+    }
+
+    /* ── Section headers ── */
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--mist);
+    }
+
+    .section + .section { margin-top: 32px; }
+
+    /* ── Fields ── */
+    .field { margin-bottom: 20px; }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+
+    label .req {
+      color: var(--gold);
+      margin-left: 2px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--mist);
+      border-radius: var(--radius);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: var(--navy);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(27, 42, 74, 0.08);
+    }
+
+    /* Keyboard focus for non-mouse users */
+    input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    input.error, select.error, textarea.error {
+      border-color: var(--error);
+    }
+
+    .field-error {
+      font-size: 0.72rem;
+      color: var(--error);
+      margin-top: 4px;
+      display: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6A7A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    /* ── Two-column grid ── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 480px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* ── Checkbox rows ── */
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .check-row input[type="checkbox"] {
+      width: 17px;
+      height: 17px;
+      accent-color: var(--navy);
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .check-row span {
+      font-size: 0.82rem;
+      color: var(--slate);
+      line-height: 1.5;
+    }
+
+    /* ── Pricing hint ── */
+    .pricing-hint {
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 12px 16px;
+      font-size: 0.78rem;
+      color: var(--slate);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .pricing-hint strong { color: var(--navy); }
+
+    /* ── ZIP warning (soft, non-blocking) ── */
+    .zip-warning {
+      font-size: 0.72rem;
+      color: #8B6914;
+      background: #FFF8E6;
+      border: 1px solid #E8C84C;
+      border-radius: var(--radius);
+      padding: 8px 10px;
+      margin-top: 6px;
+      display: none;
+      line-height: 1.5;
+    }
+
+    /* ── Detergent radios ── */
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .radio-chip { position: relative; }
+
+    .radio-chip input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .radio-chip label {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1.5px solid var(--mist);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--slate);
+      cursor: pointer;
+      transition: all 0.15s;
+      margin: 0;
+    }
+
+    .radio-chip input[type="radio"]:checked + label {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: var(--cream);
+    }
+
+    .radio-chip input[type="radio"]:focus-visible + label {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    /* ── Submit ── */
+    .submit-wrap {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    button[type="submit"] {
+      background: var(--navy);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--radius);
+      padding: 15px 48px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    button[type="submit"]:hover { background: #263d68; }
+    button[type="submit"]:active { transform: scale(0.98); }
+    button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .trust-line {
+      font-size: 0.78rem;
+      color: var(--slate);
+      margin-top: 14px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .legal {
+      font-size: 0.7rem;
+      color: var(--slate);
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    /* ── Inline form error banner ── */
+    #form-error-banner {
+      display: none;
+      background: #FDF0F0;
+      border: 1px solid var(--error);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-size: 0.8rem;
+      color: var(--error);
+      margin-top: 16px;
+      text-align: left;
+    }
+
+    /* ── Success state ── */
+    #success-msg {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+    }
+
+    .check-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .check-icon svg { stroke: var(--gold); }
+
+    #success-msg h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    #success-msg p {
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.7rem;
+      color: var(--slate);
+      letter-spacing: 0.06em;
+    }
+
+    footer a { color: var(--navy); text-decoration: none; }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">Thread <span>&</span> Oak</div>
+  <div class="tagline">Laundry Co. &nbsp;·&nbsp; Cary &amp; Morrisville</div>
+</header>
+<div class="rule"></div>
+
+<div class="hero">
+  <h1>Start Your First Pickup</h1>
+  <p>We'll wash, dry, and fold your laundry — and have it back at your door within 48 hours.</p>
+  <p style="margin-top:20px; line-height:1.8; font-size:0.9rem;">
+    ✓ Free pickup &amp; delivery<br>
+    ✓ 48-hour turnaround<br>
+    ✓ Serving Cary &amp; Morrisville
+  </p>
+</div>
+
+<div class="container">
+  <div class="form-card">
+
+    <form id="order-form" action="https://formspree.io/f/maqgnzjg" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="New Thread &amp; Oak Pickup Request" />
+
+      <!-- Honeypot: hidden from real users, bots fill it in -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <!-- ── Contact ── -->
+      <div class="section">
+        <div class="section-label">Your Info</div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="fname">First name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="fname" name="fname" autocomplete="given-name" placeholder="Alex" aria-required="true" maxlength="100" />
+            <div class="field-error" id="fname-err" role="alert">Please enter your first name.</div>
+          </div>
+          <div class="field">
+            <label for="lname">Last name <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="lname" name="lname" autocomplete="family-name" placeholder="Morgan" aria-required="true" maxlength="100" />
+            <div class="field-error" id="lname-err" role="alert">Please enter your last name.</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="name@example.com" aria-required="true" maxlength="254" />
+            <div class="field-error" id="email-err" role="alert">Please enter a valid email address.</div>
+          </div>
+          <div class="field">
+            <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(919) 555-5555" aria-required="true" maxlength="20" />
+            <div class="field-error" id="phone-err" role="alert">Please enter a valid phone number.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Pickup Address ── -->
+      <div class="section">
+        <div class="section-label">Pickup Address</div>
+
+        <div class="field">
+          <label for="pickup-street">Street address <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="pickup-street" name="pickup-street" autocomplete="street-address" placeholder="123 Regency Pkwy" aria-required="true" maxlength="200" />
+          <div class="field-error" id="pickup-street-err" role="alert">Please enter your street address.</div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="pickup-city">City <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="pickup-city" name="pickup-city" autocomplete="address-level2" placeholder="Cary" aria-required="true" maxlength="100" />
+            <div class="field-error" id="pickup-city-err" role="alert">Please enter your city.</div>
+          </div>
+          <div class="field">
+            <label for="pickup-zip">ZIP code <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="pickup-zip" name="pickup-zip" autocomplete="postal-code" placeholder="27513" aria-required="true" maxlength="10" inputmode="numeric" />
+            <div class="field-error" id="pickup-zip-err" role="alert">Please enter a valid ZIP code.</div>
+            <!-- Soft warning — does not block submission -->
+            <div class="zip-warning" id="zip-warning" role="status">
+              Heads up: we currently serve Cary (27511–27519) and Morrisville (27560). If your ZIP is nearby, reach out at <strong>(919) 435-4608</strong> and we may be able to accommodate you.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Delivery Address ── -->
+      <div class="section">
+        <div class="section-label">Delivery Address</div>
+
+        <label class="check-row" for="same-addr">
+          <input type="checkbox" id="same-addr" name="same-addr" checked />
+          <span>Same as pickup address</span>
+        </label>
+
+        <div id="delivery-fields" style="display:none;">
+          <div class="field">
+            <label for="del-street">Street address <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="del-street" name="del-street" autocomplete="street-address" placeholder="456 Perimeter Park Dr" maxlength="200" />
+            <div class="field-error" id="del-street-err" role="alert">Please enter a delivery street address.</div>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="del-city">City <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="del-city" name="del-city" autocomplete="address-level2" placeholder="Morrisville" maxlength="100" />
+              <div class="field-error" id="del-city-err" role="alert">Please enter a delivery city.</div>
+            </div>
+            <div class="field">
+              <label for="del-zip">ZIP code <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="del-zip" name="del-zip" autocomplete="postal-code" placeholder="27560" maxlength="10" inputmode="numeric" />
+              <div class="field-error" id="del-zip-err" role="alert">Please enter a delivery ZIP code.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Pickup Schedule ── -->
+      <div class="section">
+        <div class="section-label">Pickup Preference</div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="pickup-day">Preferred day <span class="req" aria-hidden="true">*</span></label>
+            <select id="pickup-day" name="pickup-day" aria-required="true">
+              <option value="" disabled selected>Select a day</option>
+              <option>Monday</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option>Thursday</option>
+              <option>Friday</option>
+              <option>Saturday</option>
+            </select>
+            <div class="field-error" id="pickup-day-err" role="alert">Please select a preferred day.</div>
+          </div>
+          <div class="field">
+            <label for="pickup-time">Time window <span class="req" aria-hidden="true">*</span></label>
+            <select id="pickup-time" name="pickup-time" aria-required="true">
+              <option value="" disabled selected>Select a window</option>
+              <option>Morning (8 AM – 12 PM)</option>
+              <option>Afternoon (12 PM – 4 PM)</option>
+              <option>Evening (4 PM – 8 PM)</option>
+            </select>
+            <div class="field-error" id="pickup-time-err" role="alert">Please select a time window.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Order Details ── -->
+      <div class="section">
+        <div class="section-label">Order Details</div>
+
+        <div class="pricing-hint">
+          <strong>Pricing</strong><br>
+          • Single Order — $1.99/lb<br>
+          • Weekly Plan — $1.89/lb<br>
+          • Family Plan — $1.79/lb<br><br>
+          <strong>20 lb minimum per order.</strong>
+        </div>
+
+        <div class="field">
+          <label for="load-size">Estimated load size <span class="req" aria-hidden="true">*</span></label>
+          <select id="load-size" name="load-size" aria-required="true">
+            <option value="" disabled selected>Choose one</option>
+            <option>Small (20–30 lbs)</option>
+            <option>Medium (30–50 lbs)</option>
+            <option>Large (50–80 lbs)</option>
+            <option>Extra large (80+ lbs)</option>
+            <option>Not sure</option>
+          </select>
+          <div class="field-error" id="load-size-err" role="alert">Please estimate your load size.</div>
+        </div>
+
+        <div class="field">
+          <label>Detergent preference</label>
+          <div class="radio-group" role="radiogroup" aria-label="Detergent preference">
+            <div class="radio-chip">
+              <input type="radio" id="det-standard" name="detergent" value="Standard (provided)" checked />
+              <label for="det-standard">Standard (provided)</label>
+            </div>
+            <div class="radio-chip">
+              <input type="radio" id="det-sensitive" name="detergent" value="Sensitive / fragrance-free" />
+              <label for="det-sensitive">Sensitive / fragrance-free</label>
+            </div>
+            <div class="radio-chip">
+              <input type="radio" id="det-own" name="detergent" value="I'll send my own" />
+              <label for="det-own">I'll send my own</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 20 lb acknowledgment lives here, next to pricing context -->
+        <div class="field">
+          <label class="check-row" for="minimum-ack">
+            <input type="checkbox" id="minimum-ack" name="minimum-ack" value="Customer acknowledges 20 lb minimum" />
+            <span>I understand there is a 20 lb minimum per order.</span>
+          </label>
+          <div class="field-error" id="minimum-ack-err" role="alert">Please confirm you've read the 20 lb minimum.</div>
+        </div>
+
+        <div class="field">
+          <label for="special-instructions">Special instructions</label>
+          <textarea id="special-instructions" name="special-instructions" placeholder="Delicates to lay flat, cold water only, no dryer sheets, anything else we should know…" maxlength="2000"></textarea>
+        </div>
+      </div>
+
+      <!-- ── Referral ── -->
+      <div class="section">
+        <div class="section-label">How Did You Hear About Us?</div>
+        <div class="field">
+          <select id="referral" name="referral">
+            <option value="" disabled selected>Select one</option>
+            <option>Nextdoor</option>
+            <option>Facebook / Instagram</option>
+            <option>Google search</option>
+            <option>Friend or neighbor</option>
+            <option>Flyer or door hanger</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ── Submit ── -->
+      <div class="submit-wrap">
+        <button type="submit" id="submit-btn">Submit Pickup Request</button>
+
+        <p class="trust-line">No payment collected until your laundry is delivered.</p>
+
+        <p class="legal">
+          By submitting this form you're requesting a pickup. We'll contact you to confirm your window.
+        </p>
+
+        <div id="form-error-banner" role="alert">
+          Something went wrong sending your request. Please try again or contact us at
+          <a href="mailto:info@threadandoak.com">info@threadandoak.com</a> or
+          <a href="tel:+19194354608">(919) 435-4608</a>.
+        </div>
+      </div>
+    </form>
+
+    <!-- Success -->
+    <div id="success-msg" role="status">
+      <div class="check-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h2>Request received!</h2>
+      <p>
+        We'll be in touch shortly to confirm your pickup window.<br>
+        Questions in the meantime? Text us at <strong>(919) 435-4608</strong>.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Thread &amp; Oak Laundry Co. &nbsp;·&nbsp; Cary &amp; Morrisville, NC &nbsp;·&nbsp;
+  <a href="mailto:info@threadandoak.com">info@threadandoak.com</a>
+</footer>
+
+<script>
+  // ── Service area ZIPs (soft check only — does not block) ──
+  const SERVICE_ZIPS = new Set([
+    '27511','27512','27513','27518','27519', // Cary
+    '27560'                                  // Morrisville
+  ]);
+
+  // ── Sanitize: strip tags and control chars before submission ──
+  function sanitize(str) {
+    return String(str)
+      .replace(/<[^>]*>/g, '')       // strip HTML tags
+      .replace(/[<>&"']/g, c => ({   // encode remaining special chars
+        '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&#x27;'
+      }[c]))
+      .trim()
+      .slice(0, 5000);               // hard length cap
+  }
+
+  // ── Phone validation: digits only, 7–15 chars ──
+  function isValidPhone(val) {
+    const digits = val.replace(/\D/g, '');
+    return digits.length >= 7 && digits.length <= 15;
+  }
+
+  // ── Email validation ──
+  function isValidEmail(val) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  }
+
+  // ── ZIP validation ──
+  function isValidZip(val) {
+    return /^\d{5}(-\d{4})?$/.test(val.trim());
+  }
+
+  // ── UI helpers ──
+  function showError(inputId, errId) {
+    const input = document.getElementById(inputId);
+    const error = document.getElementById(errId);
+    if (input) { input.classList.add('error'); input.setAttribute('aria-invalid', 'true'); }
+    if (error) error.style.display = 'block';
+  }
+
+  function clearError(inputId, errId) {
+    const input = document.getElementById(inputId);
+    const error = document.getElementById(errId);
+    if (input) { input.classList.remove('error'); input.removeAttribute('aria-invalid'); }
+    if (error) error.style.display = 'none';
+  }
+
+  // ── Delivery address toggle ──
+  const sameAddr = document.getElementById('same-addr');
+  const deliveryFields = document.getElementById('delivery-fields');
+  const delInputs = ['del-street','del-city','del-zip'];
+
+  sameAddr.addEventListener('change', () => {
+    const show = !sameAddr.checked;
+    deliveryFields.style.display = show ? 'block' : 'none';
+    delInputs.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.required = show;
+    });
+    if (!show) {
+      delInputs.forEach(id => clearError(id, id + '-err'));
+    }
+  });
+
+  // ── ZIP service-area soft check ──
+  const pickupZipEl = document.getElementById('pickup-zip');
+  const zipWarning  = document.getElementById('zip-warning');
+
+  pickupZipEl.addEventListener('blur', () => {
+    const zip = pickupZipEl.value.trim().slice(0, 5);
+    if (zip.length === 5 && !SERVICE_ZIPS.has(zip)) {
+      zipWarning.style.display = 'block';
+    } else {
+      zipWarning.style.display = 'none';
+    }
+  });
+
+  // ── Live error clearing ──
+  const requiredFields = [
+    { id: 'fname',        errId: 'fname-err' },
+    { id: 'lname',        errId: 'lname-err' },
+    { id: 'email',        errId: 'email-err' },
+    { id: 'phone',        errId: 'phone-err' },
+    { id: 'pickup-street',errId: 'pickup-street-err' },
+    { id: 'pickup-city',  errId: 'pickup-city-err' },
+    { id: 'pickup-zip',   errId: 'pickup-zip-err' },
+    { id: 'pickup-day',   errId: 'pickup-day-err' },
+    { id: 'pickup-time',  errId: 'pickup-time-err' },
+    { id: 'load-size',    errId: 'load-size-err' },
+  ];
+
+  requiredFields.forEach(({ id, errId }) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input',  () => clearError(id, errId));
+    el.addEventListener('change', () => clearError(id, errId));
+  });
+
+  const minimumAck = document.getElementById('minimum-ack');
+  minimumAck.addEventListener('change', () => {
+    const err = document.getElementById('minimum-ack-err');
+    if (err) err.style.display = 'none';
+  });
+
+  // ── Submit ──
+  const form      = document.getElementById('order-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const errorBanner = document.getElementById('form-error-banner');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    errorBanner.style.display = 'none';
+
+    let valid = true;
+
+    // Basic required field checks
+    requiredFields.forEach(({ id, errId }) => {
+      const el  = document.getElementById(id);
+      const val = el ? el.value.trim() : '';
+      if (!val) { showError(id, errId); valid = false; }
+    });
+
+    // Email format
+    const emailVal = document.getElementById('email').value.trim();
+    if (!emailVal || !isValidEmail(emailVal)) {
+      showError('email', 'email-err'); valid = false;
+    }
+
+    // Phone format
+    const phoneVal = document.getElementById('phone').value.trim();
+    if (!phoneVal || !isValidPhone(phoneVal)) {
+      showError('phone', 'phone-err'); valid = false;
+    }
+
+    // ZIP format
+    const pickupZip = pickupZipEl.value.trim();
+    if (!isValidZip(pickupZip)) {
+      showError('pickup-zip', 'pickup-zip-err'); valid = false;
+    }
+
+    // Delivery address when unchecked
+    if (!sameAddr.checked) {
+      delInputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el || !el.value.trim()) { showError(id, id + '-err'); valid = false; }
+      });
+      const delZip = document.getElementById('del-zip').value.trim();
+      if (delZip && !isValidZip(delZip)) {
+        showError('del-zip', 'del-zip-err'); valid = false;
+      }
+    }
+
+    // 20 lb acknowledgment
+    if (!minimumAck.checked) {
+      document.getElementById('minimum-ack-err').style.display = 'block';
+      valid = false;
+    }
+
+    if (!valid) {
+      const firstError = document.querySelector('.error, [style*="display: block"].field-error');
+      if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    // Sanitize free-text fields before submit
+    const freeTextFields = ['fname','lname','pickup-street','pickup-city','pickup-zip',
+                            'del-street','del-city','del-zip','special-instructions'];
+    const formData = new FormData(form);
+    freeTextFields.forEach(name => {
+      const raw = formData.get(name);
+      if (raw) formData.set(name, sanitize(raw));
+    });
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Non-2xx from Formspree
+        errorBanner.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Pickup Request';
+        errorBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } catch (err) {
+      // Network failure
+      errorBanner.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Pickup Request';
+      errorBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+</script>
+
+</body>
+</html>
