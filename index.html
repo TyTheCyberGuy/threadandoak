@@ -3,1314 +3,172 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Thread &amp; Oak Laundry Co. — Premium laundry pickup and delivery for busy professionals and families in Cary and Morrisville, NC."/>
-<meta name="keywords" content="laundry pickup delivery Cary NC, laundry service Morrisville NC, wash and fold Cary, wash and fold Morrisville, laundry pickup Cary, laundry delivery Morrisville"/>
-<meta property="og:title" content="Thread &amp; Oak Laundry Co."/>
-<meta property="og:description" content="Laundry Done. Weekend Saved. Premium pickup & delivery in Cary and Morrisville, NC."/>
+<meta name="description" content="Thread & Oak Laundry Co. — Premium laundry pickup and delivery for busy professionals and families in select Morrisville, NC neighborhoods."/>
+<meta name="keywords" content="laundry pickup delivery Morrisville NC, laundry service Morrisville NC, wash and fold Morrisville, laundry pickup Morrisville, laundry delivery Morrisville"/>
+<meta property="og:title" content="Thread & Oak Laundry Co."/>
+<meta property="og:description" content="Laundry Done. Weekend Saved. Premium pickup and delivery in select Morrisville neighborhoods."/>
 <meta property="og:type" content="website"/>
-<title>Thread &amp; Oak Laundry Co. | Cary &amp; Morrisville, NC</title>
+<title>Thread &amp; Oak Laundry Co. | Morrisville Laundry Pickup &amp; Delivery</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --navy:   #1B2A3B;
-    --navy2:  #243347;
-    --cream:  #F5F0E8;
-    --cream2: #EDE6D8;
-    --gold:   #A8895E;
-    --gold2:  #C4A97E;
-    --text:   #2C1F0E;
-    --muted:  #6B5C48;
-    --white:  #FFFFFF;
-    --serif:  'Cormorant Garamond', Georgia, serif;
-    --sans:   'Inter', system-ui, sans-serif;
-  }
-
+  :root { --navy:#1B2A3B; --navy2:#243347; --cream:#F5F0E8; --cream2:#EDE6D8; --gold:#A8895E; --gold2:#C4A97E; --text:#2C1F0E; --muted:#6B5C48; --white:#FFFFFF; --serif:'Cormorant Garamond', Georgia, serif; --sans:'Inter', system-ui, sans-serif; }
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--sans);
-    background: var(--cream);
-    color: var(--text);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: var(--cream);
-    border-bottom: 1px solid var(--cream2);
-    padding: 0 40px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: box-shadow 0.3s;
-  }
-  nav.scrolled { box-shadow: 0 2px 20px rgba(27,42,59,0.1); }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    text-decoration: none;
-  }
-  .nav-logo-icon {
-    width: 44px;
-    height: 44px;
-    border: 1.5px solid var(--navy);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .nav-logo-text { line-height: 1.15; }
-  .nav-logo-text .brand { font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--navy); letter-spacing: 1.5px; }
-  .nav-logo-text .sub {
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: var(--gold);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .nav-logo-text .sub::before,
-  .nav-logo-text .sub::after { content: '—'; opacity: 0.5; }
-
-  .nav-links { display: flex; align-items: center; gap: 36px; }
-  .nav-links a {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--navy);
-    text-decoration: none;
-    font-weight: 500;
-    opacity: 0.75;
-    transition: opacity 0.2s;
-  }
-  .nav-links a:hover { opacity: 1; }
-
-  .nav-cta {
-    background: var(--navy) !important;
-    color: var(--white) !important;
-    padding: 11px 22px !important;
-    border-radius: 2px;
-    opacity: 1 !important;
-    letter-spacing: 1.5px !important;
-    font-weight: 600 !important;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover { background: var(--navy2) !important; }
-
-  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-  .nav-hamburger span { display: block; width: 24px; height: 1.5px; background: var(--navy); }
-
-  /* ── HERO ── */
-  #home {
-    min-height: 100vh;
-    padding-top: 72px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: var(--cream);
-  }
-
-  .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 60px 80px 80px;
-  }
-
-  .hero-eyebrow {
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-
-  .hero-headline {
-    font-family: var(--serif);
-    font-size: clamp(48px, 5.5vw, 76px);
-    font-weight: 300;
-    line-height: 1.08;
-    color: var(--navy);
-    margin-bottom: 28px;
-    letter-spacing: -0.5px;
-  }
-  .hero-headline em { font-style: italic; color: var(--gold); }
-
-  .hero-sub {
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 44px;
-    max-width: 380px;
-  }
-
-  .hero-actions { display: flex; flex-direction: column; gap: 16px; }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--navy);
-    color: var(--white);
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 16px 32px;
-    border-radius: 2px;
-    max-width: fit-content;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-primary:hover { background: var(--navy2); transform: translateY(-1px); }
-  .btn-primary svg { flex-shrink: 0; }
-
-  .hero-trust {
-    font-size: 12px;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .hero-trust svg { color: var(--gold); }
-
- .hero-contact {
-  font-size: 14px;
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-.hero-contact a {
-  color: var(--navy);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.hero-contact a:hover {
-  color: var(--gold);
-}
-
-  .hero-right {
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-bag-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    padding: 60px 40px;
-    text-align: center;
-  }
-
-  .hero-bag-emblem {
-    width: 130px;
-    height: 130px;
-    border: 1.5px solid rgba(168,137,94,0.5);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-bag-name {
-    font-family: var(--serif);
-    font-size: 28px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    color: var(--cream);
-  }
-  .hero-bag-sub {
-    font-size: 10px;
-    letter-spacing: 4px;
-    color: var(--gold2);
-    margin-top: 6px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .hero-bag-sub::before, .hero-bag-sub::after { content: '—'; opacity: 0.5; }
-
-  .hero-bag-tagline {
-    font-family: var(--serif);
-    font-size: 20px;
-    font-style: italic;
-    color: var(--gold2);
-    line-height: 1.4;
-    opacity: 0.9;
-  }
-
-  /* decorative dots on navy bg */
-  .hero-right::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(168,137,94,0.08) 1px, transparent 1px);
-    background-size: 28px 28px;
-  }
-
-  /* ── PROCESS STRIP ── */
-  .process-strip {
-    background: var(--navy);
-    padding: 48px 80px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-  }
-
-  .process-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 0 32px;
-    border-right: 1px solid rgba(255,255,255,0.08);
-  }
+  body { font-family: var(--sans); background: var(--cream); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .hero-image-home { position: relative; width: 100%; background: var(--navy); overflow: hidden; }
+  .hero-image-home img { display: block; width: 100%; height: auto; }
+  .hotspot { position: absolute; z-index: 10; display: block; }
+  .hotspot:focus-visible { outline: 2px solid var(--gold2); outline-offset: 3px; }
+  .home-link { top: 5.1%; left: 31%; width: 4.2%; height: 3.4%; }
+  .services-link { top: 5.1%; left: 36.7%; width: 5.8%; height: 3.4%; }
+  .pricing-link { top: 5.1%; left: 44.3%; width: 5.1%; height: 3.4%; }
+  .routes-link { top: 5.1%; left: 51.1%; width: 5.1%; height: 3.4%; }
+  .how-link { top: 5.1%; left: 57.4%; width: 8.9%; height: 3.4%; }
+  .about-link { top: 5.1%; left: 68.2%; width: 5.3%; height: 3.4%; }
+  .faq-link { top: 5.1%; left: 75.2%; width: 3.6%; height: 3.4%; }
+  .schedule-top-link { top: 3.1%; right: 2.4%; width: 14.8%; height: 5.6%; }
+  .schedule-main-link { top: 74%; left: 40.2%; width: 19.5%; height: 6.4%; }
+  .mobile-nav { display: none; background: var(--navy); padding: 14px 18px; border-bottom: 1px solid rgba(245,240,232,0.08); position: sticky; top: 0; z-index: 50; }
+  .mobile-nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .mobile-brand { font-family: var(--serif); color: var(--cream); letter-spacing: 2px; font-size: 18px; }
+  .mobile-menu-btn { background: transparent; border: 1px solid rgba(245,240,232,0.2); color: var(--cream); padding: 8px 10px; border-radius: 3px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .mobile-menu { display: none; padding-top: 16px; gap: 14px; flex-direction: column; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: var(--cream); text-decoration: none; font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase; }
+  .mobile-menu a.mobile-cta { background: var(--gold); color: var(--white); text-align: center; padding: 12px; border-radius: 3px; margin-top: 4px; }
+  .process-strip { background: var(--navy); padding: 34px 70px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .process-item { display: flex; align-items: flex-start; gap: 18px; padding: 0 28px; border-right: 1px solid rgba(255,255,255,0.12); }
   .process-item:first-child { padding-left: 0; }
-  .process-item:last-child { border-right: none; }
-
-  .process-icon {
-    width: 48px;
-    height: 48px;
-    border: 1px solid rgba(168,137,94,0.4);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: var(--gold2);
-  }
-
-  .process-label {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold2);
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-  .process-desc {
-    font-size: 13px;
-    color: rgba(245,240,232,0.65);
-    line-height: 1.6;
-  }
-
-  /* ── SECTION BASE ── */
-  section { padding: 100px 80px; }
-  .section-eyebrow {
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-  }
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(36px, 4vw, 54px);
-    font-weight: 300;
-    color: var(--navy);
-    line-height: 1.15;
-    margin-bottom: 20px;
-  }
+  .process-item:last-child { border-right: none; padding-right: 0; }
+  .process-icon { width: 42px; height: 42px; min-width: 42px; color: var(--gold2); }
+  .process-label { font-family: var(--serif); font-size: 24px; color: var(--cream); line-height: 1.05; margin-bottom: 6px; }
+  .process-desc { font-size: 13px; color: rgba(245,240,232,0.72); line-height: 1.55; }
+  section { padding: 72px 70px; scroll-margin-top: 24px; }
+  .section-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .section-title { font-family: var(--serif); font-size: clamp(34px, 3.5vw, 50px); font-weight: 300; color: var(--navy); line-height: 1.12; margin-bottom: 16px; }
   .section-title em { font-style: italic; color: var(--gold); }
-  .section-sub {
-    font-size: 14px;
-    color: var(--muted);
-    max-width: 520px;
-    line-height: 1.8;
-    margin-bottom: 56px;
-  }
-
-  /* ── SERVICES ── */
-  #services { background: var(--white); }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: var(--cream2);
-  }
-  .service-card {
-    background: var(--white);
-    padding: 44px 36px;
-    transition: background 0.2s;
-  }
-  .service-card:hover { background: var(--cream); }
-  .service-num {
-    font-family: var(--serif);
-    font-size: 48px;
-    font-weight: 300;
-    color: var(--cream2);
-    line-height: 1;
-    margin-bottom: 20px;
-  }
-  .service-name {
-    font-family: var(--serif);
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-  }
-  .service-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.75;
-    margin-bottom: 20px;
-  }
-  .service-detail {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: var(--gold);
-    text-transform: uppercase;
-  }
-
-  /* ── HOW IT WORKS ── */
-  #how-it-works { background: var(--cream); }
-  .how-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .how-steps { display: flex; flex-direction: column; gap: 0; }
-  .how-step {
-    display: flex;
-    gap: 28px;
-    padding: 32px 0;
-    border-bottom: 1px solid var(--cream2);
-  }
+  .section-sub { font-size: 14px; color: var(--muted); max-width: 650px; line-height: 1.8; margin-bottom: 42px; }
+  #services, #how-it-works, #about { background: var(--white); }
+  #routes, #pricing, #faq { background: var(--cream); }
+  .services-grid, .pricing-grid, .routes-grid { display: grid; gap: 20px; }
+  .services-grid, .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+  .routes-grid { grid-template-columns: repeat(3, 1fr); }
+  .service-card, .pricing-card, .route-card { background: var(--white); border: 1px solid var(--cream2); border-radius: 4px; padding: 34px 30px; }
+  .service-num { font-family: var(--serif); font-size: 38px; font-weight: 300; color: var(--cream2); line-height: 1; margin-bottom: 14px; }
+  .service-name, .route-title, .pricing-name { font-family: var(--serif); font-size: 23px; color: var(--navy); margin-bottom: 10px; }
+  .service-desc, .route-note { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+  .service-detail { font-size: 11px; letter-spacing: 1.4px; color: var(--gold); text-transform: uppercase; font-weight: 600; }
+  .route-day { font-family: var(--serif); font-size: 40px; color: var(--gold); line-height: 1; margin-bottom: 12px; }
+  .route-card ul { list-style: none; }
+  .route-card li { color: var(--muted); font-size: 14px; padding: 8px 0; border-bottom: 1px solid rgba(168,137,94,0.18); }
+  .route-card li:last-child { border-bottom: none; }
+  .route-note a, .faq-a a { color: var(--gold); font-weight: 600; text-decoration: none; }
+  .how-grid, .about-grid { display: grid; grid-template-columns: 1fr .9fr; gap: 58px; align-items: center; }
+  .how-step { display: flex; gap: 22px; padding: 22px 0; border-bottom: 1px solid var(--cream2); }
   .how-step:first-child { padding-top: 0; }
   .how-step:last-child { border-bottom: none; }
-  .how-step-num {
-    font-family: var(--serif);
-    font-size: 36px;
-    font-weight: 300;
-    color: var(--gold2);
-    line-height: 1;
-    min-width: 40px;
-    opacity: 0.6;
-  }
-  .how-step-title {
-    font-family: var(--serif);
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 8px;
-  }
-  .how-step-desc { font-size: 13px; color: var(--muted); line-height: 1.75; }
-
-  .how-visual {
-    background: var(--navy);
-    border-radius: 4px;
-    padding: 56px 48px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .how-visual::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(168,137,94,0.07) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
+  .how-step-num { font-family: var(--serif); font-size: 34px; color: var(--gold2); min-width: 36px; line-height: 1; }
+  .how-step-title { font-family: var(--serif); font-size: 21px; color: var(--navy); margin-bottom: 6px; }
+  .how-step-desc { color: var(--muted); font-size: 13px; line-height: 1.7; }
+  .how-visual { background: var(--navy); border-radius: 4px; padding: 42px 36px; text-align: center; position: relative; overflow: hidden; }
+  .how-visual::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(168,137,94,0.07) 1px, transparent 1px); background-size: 24px 24px; }
   .how-visual-inner { position: relative; z-index: 1; }
-  .how-visual-title {
-    font-family: var(--serif);
-    font-size: 32px;
-    font-weight: 300;
-    color: var(--cream);
-    margin-bottom: 8px;
-  }
-  .how-visual-sub { font-size: 11px; letter-spacing: 3px; color: var(--gold2); text-transform: uppercase; margin-bottom: 40px; }
-  .how-visual-stat { margin-bottom: 28px; }
-  .how-visual-stat-num {
-    font-family: var(--serif);
-    font-size: 52px;
-    font-weight: 300;
-    color: var(--gold2);
-    line-height: 1;
-  }
-  .how-visual-stat-label { font-size: 11px; letter-spacing: 2px; color: rgba(245,240,232,0.5); text-transform: uppercase; margin-top: 6px; }
-  .how-visual-divider { width: 40px; height: 1px; background: rgba(168,137,94,0.3); margin: 28px auto; }
-
-  /* ── PRICING ── */
-  #pricing { background: var(--white); }
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .pricing-card {
-    border: 1px solid var(--cream2);
-    border-radius: 4px;
-    padding: 40px 32px;
-    position: relative;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .pricing-card:hover { border-color: var(--gold2); transform: translateY(-3px); }
-  .pricing-card.featured {
-    border-color: var(--navy);
-    background: var(--navy);
-  }
-  .pricing-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--gold);
-    color: var(--white);
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 20px;
-    white-space: nowrap;
-    font-weight: 600;
-  }
-  .pricing-name {
-    font-family: var(--serif);
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
+  .how-visual-title { font-family: var(--serif); font-size: 30px; color: var(--cream); margin-bottom: 8px; }
+  .how-visual-sub { font-size: 10px; letter-spacing: 3px; color: var(--gold2); text-transform: uppercase; margin-bottom: 28px; }
+  .how-visual-stat-num { font-family: var(--serif); font-size: 44px; color: var(--gold2); line-height: 1; }
+  .how-visual-stat-label { font-size: 10px; letter-spacing: 2px; color: rgba(245,240,232,0.56); text-transform: uppercase; margin-top: 6px; }
+  .how-visual-divider { width: 40px; height: 1px; background: rgba(168,137,94,0.3); margin: 20px auto; }
+  .pricing-card { position: relative; padding: 32px 28px; }
+  .pricing-card.featured { background: var(--navy); border-color: var(--navy); }
+  .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--white); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; white-space: nowrap; font-weight: 600; }
   .pricing-card.featured .pricing-name { color: var(--cream); }
-  .pricing-tagline { font-size: 12px; color: var(--muted); margin-bottom: 28px; }
-  .pricing-card.featured .pricing-tagline { color: rgba(245,240,232,0.6); }
-  .pricing-price {
-    font-family: var(--serif);
-    font-size: 48px;
-    font-weight: 300;
-    color: var(--navy);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
+  .pricing-tagline { font-size: 12px; color: var(--muted); margin-bottom: 22px; }
+  .pricing-card.featured .pricing-tagline, .pricing-card.featured .pricing-unit { color: rgba(245,240,232,0.62); }
+  .pricing-price { font-family: var(--serif); font-size: 44px; color: var(--navy); line-height: 1; }
   .pricing-card.featured .pricing-price { color: var(--gold2); }
-  .pricing-unit { font-size: 12px; color: var(--muted); margin-bottom: 32px; }
-  .pricing-card.featured .pricing-unit { color: rgba(245,240,232,0.5); }
-  .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
-  .pricing-features li {
-    font-size: 13px;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .pricing-card.featured .pricing-features li { color: rgba(245,240,232,0.75); }
-  .pricing-features li::before {
-    content: '';
-    display: block;
-    width: 16px;
-    height: 1px;
-    background: var(--gold);
-    flex-shrink: 0;
-  }
-  .btn-outline {
-    display: block;
-    text-align: center;
-    border: 1px solid var(--navy);
-    color: var(--navy);
-    text-decoration: none;
-    font-size: 10px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 14px;
-    border-radius: 2px;
-    transition: background 0.2s, color 0.2s;
-  }
-  .btn-outline:hover { background: var(--navy); color: var(--white); }
-  .btn-outline-light {
-    display: block;
-    text-align: center;
-    border: 1px solid rgba(245,240,232,0.3);
-    color: var(--cream);
-    text-decoration: none;
-    font-size: 10px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 14px;
-    border-radius: 2px;
-    transition: background 0.2s;
-  }
-  .btn-outline-light:hover { background: rgba(245,240,232,0.1); }
-
-  /* ── ABOUT ── */
-  #about { background: var(--cream); }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .about-values { display: flex; flex-direction: column; gap: 28px; margin-top: 40px; }
-  .about-value { display: flex; gap: 20px; align-items: flex-start; }
-  .about-value-marker { width: 32px; height: 1px; background: var(--gold); margin-top: 10px; flex-shrink: 0; }
-  .about-value-title { font-family: var(--serif); font-size: 18px; color: var(--navy); margin-bottom: 6px; }
-  .about-value-desc { font-size: 13px; color: var(--muted); line-height: 1.75; }
-
-  .about-quote {
-    background: var(--navy);
-    border-radius: 4px;
-    padding: 56px 48px;
-    position: relative;
-  }
-  .about-quote-mark {
-    font-family: var(--serif);
-    font-size: 120px;
-    color: rgba(168,137,94,0.15);
-    line-height: 0.8;
-    margin-bottom: 24px;
-    display: block;
-  }
-  .about-quote-text {
-    font-family: var(--serif);
-    font-size: 24px;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--cream);
-    line-height: 1.55;
-    margin-bottom: 28px;
-  }
+  .pricing-unit { font-size: 12px; color: var(--muted); margin: 6px 0 26px; }
+  .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .pricing-features li { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+  .pricing-card.featured .pricing-features li { color: rgba(245,240,232,0.78); }
+  .pricing-features li::before { content: ''; display: block; width: 16px; height: 1px; background: var(--gold); flex-shrink: 0; }
+  .btn-outline, .btn-outline-light { display: block; text-align: center; text-decoration: none; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; padding: 13px; border-radius: 2px; transition: background .2s, color .2s, transform .15s; }
+  .btn-outline { border: 1px solid var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); transform: translateY(-1px); }
+  .btn-outline-light { border: 1px solid rgba(245,240,232,.35); color: var(--cream); }
+  .btn-outline-light:hover { background: rgba(245,240,232,.1); transform: translateY(-1px); }
+  .about-values { display: flex; flex-direction: column; gap: 22px; margin-top: 28px; }
+  .about-value { display: flex; gap: 18px; }
+  .about-value-marker { width: 34px; height: 1px; background: var(--gold); margin-top: 13px; flex-shrink: 0; }
+  .about-value-title { font-family: var(--serif); font-size: 19px; color: var(--navy); margin-bottom: 4px; }
+  .about-value-desc { color: var(--muted); font-size: 13px; line-height: 1.7; }
+  .about-quote { background: var(--navy); border-radius: 4px; padding: 42px 38px; }
+  .about-quote-mark { font-family: var(--serif); font-size: 90px; color: rgba(168,137,94,0.18); line-height: .8; display: block; margin-bottom: 18px; }
+  .about-quote-text { font-family: var(--serif); font-size: 24px; font-style: italic; color: var(--cream); line-height: 1.48; margin-bottom: 24px; }
   .about-quote-attr { font-size: 11px; letter-spacing: 2px; color: var(--gold2); text-transform: uppercase; }
-
-  /* ── FAQ ── */
-  #faq { background: var(--white); }
-  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; }
-  .faq-item { padding: 28px 0; border-bottom: 1px solid var(--cream2); }
-  .faq-q {
-    font-family: var(--serif);
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  .faq-a { font-size: 13px; color: var(--muted); line-height: 1.75; }
-
-  /* ── CTA BAND ── */
-  .cta-band {
-    background: var(--navy);
-    padding: 80px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 40px;
-  }
-  .cta-band-title {
-    font-family: var(--serif);
-    font-size: clamp(32px, 3.5vw, 48px);
-    font-weight: 300;
-    color: var(--cream);
-    line-height: 1.2;
-  }
-  .cta-band-title em { font-style: italic; color: var(--gold2); }
-  .cta-band-sub { font-size: 13px; color: rgba(245,240,232,0.55); margin-top: 10px; letter-spacing: 0.5px; }
-  .btn-gold {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--gold);
-    color: var(--white);
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 18px 36px;
-    border-radius: 2px;
-    white-space: nowrap;
-    transition: background 0.2s, transform 0.15s;
-    flex-shrink: 0;
-  }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 58px; }
+  .faq-item { padding: 22px 0; border-bottom: 1px solid var(--cream2); }
+  .faq-q { font-family: var(--serif); font-size: 19px; color: var(--navy); margin-bottom: 8px; }
+  .faq-a { font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .cta-band { background: var(--navy); padding: 58px 70px; display: grid; grid-template-columns: 1fr auto; gap: 34px; align-items: center; }
+  .cta-band-title { font-family: var(--serif); font-size: clamp(32px, 3.3vw, 46px); font-weight: 300; color: var(--cream); line-height: 1.16; }
+  .cta-band-title em { color: var(--gold2); font-style: italic; }
+  .cta-band-sub { font-size: 13px; color: rgba(245,240,232,.62); margin-top: 8px; }
+  .btn-gold { display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--white); text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; padding: 16px 30px; border-radius: 2px; white-space: nowrap; transition: transform .15s, background .2s; }
   .btn-gold:hover { background: var(--gold2); transform: translateY(-1px); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 56px 80px 32px;
-  }
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 48px;
-    margin-bottom: 48px;
-  }
-  .footer-brand-name {
-    font-family: var(--serif);
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    color: var(--cream);
-    margin-bottom: 4px;
-  }
-  .footer-brand-sub { font-size: 9px; letter-spacing: 3px; color: var(--gold2); text-transform: uppercase; margin-bottom: 16px; }
-  .footer-brand-desc { font-size: 12px; color: rgba(245,240,232,0.45); line-height: 1.75; max-width: 240px; }
-  .footer-col-title { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold2); margin-bottom: 16px; }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .footer-col ul li a {
-    font-size: 12px;
-    color: rgba(245,240,232,0.5);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-col ul li a:hover { color: var(--cream); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding-top: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer-bottom-left { font-size: 11px; color: rgba(245,240,232,0.3); }
-  .footer-bottom-right { display: flex; gap: 24px; }
-  .footer-bottom-right a { font-size: 11px; color: rgba(245,240,232,0.3); text-decoration: none; }
-  .footer-bottom-right a:hover { color: rgba(245,240,232,0.6); }
-
-  /* ── TRUST BAR ── */
-  .trust-bar {
-    background: var(--cream2);
-    padding: 18px 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
-    border-top: 1px solid rgba(27,42,59,0.08);
-  }
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
+  .trust-bar { background: var(--cream2); padding: 15px 70px; display: flex; justify-content: center; align-items: center; gap: 34px; border-top: 1px solid rgba(27,42,59,.08); flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 8px; font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted); }
   .trust-item svg { color: var(--gold); flex-shrink: 0; }
-  .trust-divider { width: 1px; height: 16px; background: var(--cream2); border-left: 1px solid rgba(27,42,59,0.15); }
-
-  /* ── MOBILE ── */
+  .trust-divider { width: 1px; height: 16px; border-left: 1px solid rgba(27,42,59,.14); }
+  footer { background: var(--navy); padding: 42px 70px 26px; }
+  .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 38px; margin-bottom: 34px; }
+  .footer-brand-name { font-family: var(--serif); font-size: 20px; letter-spacing: 2px; color: var(--cream); margin-bottom: 4px; }
+  .footer-brand-sub, .footer-col-title { font-size: 9px; letter-spacing: 3px; color: var(--gold2); text-transform: uppercase; margin-bottom: 14px; }
+  .footer-brand-desc { font-size: 12px; color: rgba(245,240,232,.5); line-height: 1.75; max-width: 290px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .footer-col a { font-size: 12px; color: rgba(245,240,232,.58); text-decoration: none; }
+  .footer-col a:hover { color: var(--cream); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.07); padding-top: 20px; display: flex; justify-content: space-between; gap: 18px; align-items: center; }
+  .footer-bottom-left, .footer-bottom-right a { font-size: 11px; color: rgba(245,240,232,.38); text-decoration: none; }
+  .footer-bottom-right { display: flex; gap: 22px; }
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
   @media (max-width: 900px) {
-    nav { padding: 0 24px; }
-    .nav-links { display: none; }
-    .nav-links.open {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 72px; left: 0; right: 0;
-      background: var(--cream);
-      padding: 24px;
-      gap: 20px;
-      border-bottom: 1px solid var(--cream2);
-      z-index: 99;
-    }
-    .nav-hamburger { display: flex; }
-    #home { grid-template-columns: 1fr; }
-    .hero-right { display: none; }
-    .hero-left { padding: 60px 24px; }
-    .process-strip { grid-template-columns: 1fr 1fr; padding: 40px 24px; gap: 24px; }
-    .process-item { padding: 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 24px; }
-    .process-item:nth-child(3), .process-item:last-child { border-bottom: none; }
-    section { padding: 64px 24px; }
-    .services-grid { grid-template-columns: 1fr; }
-    .how-grid { grid-template-columns: 1fr; gap: 40px; }
-    .how-visual { display: none; }
-    .pricing-grid { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .faq-grid { grid-template-columns: 1fr; }
-    .cta-band { grid-template-columns: 1fr; padding: 56px 24px; }
-    footer { padding: 48px 24px 24px; }
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-    .trust-bar { padding: 16px 24px; gap: 20px; flex-wrap: wrap; justify-content: center; }
-    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .hotspot { display:none; }
+    .mobile-nav { display:block; }
+    .process-strip { grid-template-columns:1fr; padding:30px 24px; gap:20px; }
+    .process-item { padding:0 0 20px 0; border-right:none; border-bottom:1px solid rgba(255,255,255,.1); }
+    .process-item:last-child { border-bottom:none; padding-bottom:0; }
+    section { padding:52px 24px; }
+    .services-grid, .routes-grid, .pricing-grid, .how-grid, .about-grid, .faq-grid, .footer-top { grid-template-columns:1fr; }
+    .how-grid, .about-grid { gap:36px; }
+    .cta-band { grid-template-columns:1fr; padding:46px 24px; }
+    .trust-bar { padding:15px 24px; gap:16px; }
+    .trust-divider { display:none; }
+    footer { padding:36px 24px 24px; }
+    .footer-top { gap:26px; }
+    .footer-bottom { flex-direction:column; text-align:center; }
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { transition: none !important; animation: none !important; }
-  }
-
-
-  /* ── COMPACT OVERRIDES ── */
-  /* Reduces oversized fonts and excess whitespace while keeping the same design. */
-  nav { height: 64px; padding: 0 32px; }
-  .nav-logo-icon { width: 38px; height: 38px; }
-  .nav-logo-text .brand { font-size: 16px; letter-spacing: 1.2px; }
-  .nav-logo-text .sub { font-size: 8px; letter-spacing: 2.4px; }
-  .nav-links { gap: 26px; }
-  .nav-links a { font-size: 10px; letter-spacing: 1.6px; }
-  .nav-cta { padding: 9px 18px !important; }
-
-  #home { min-height: auto; padding-top: 64px; }
-  .hero-left { padding: 52px 48px 56px 64px; }
-  .hero-eyebrow { font-size: 9px; letter-spacing: 3px; margin-bottom: 18px; }
-  .hero-headline { font-size: clamp(38px, 4.4vw, 58px); margin-bottom: 18px; line-height: 1.03; }
-  .hero-sub { font-size: 12px; letter-spacing: 1.5px; line-height: 1.65; margin-bottom: 30px; }
-  .btn-primary { padding: 13px 24px; font-size: 10px; letter-spacing: 2px; }
-  .hero-trust { font-size: 11px; }
-  .hero-bag-wrap { gap: 22px; padding: 40px 32px; }
-  .hero-bag-emblem { width: 105px; height: 105px; }
-  .hero-bag-name { font-size: 24px; letter-spacing: 3px; }
-  .hero-bag-sub { font-size: 9px; letter-spacing: 3px; }
-  .hero-bag-tagline { font-size: 18px; }
-
-  .process-strip { padding: 32px 64px; }
-  .process-item { gap: 16px; padding: 0 24px; }
-  .process-icon { width: 40px; height: 40px; }
-  .process-label { font-size: 9px; letter-spacing: 2.5px; }
-  .process-desc { font-size: 12px; }
-
-  section { padding: 68px 64px; }
-  .section-eyebrow { font-size: 9px; letter-spacing: 3px; margin-bottom: 10px; }
-  .section-title { font-size: clamp(30px, 3vw, 42px); margin-bottom: 14px; line-height: 1.1; }
-  .section-sub { font-size: 13px; line-height: 1.7; margin-bottom: 34px; }
-
-  .services-grid { gap: 1px; }
-  .service-card { padding: 30px 28px; }
-  .service-num { font-size: 34px; margin-bottom: 14px; }
-  .service-name { font-size: 20px; margin-bottom: 8px; }
-  .service-desc { font-size: 12px; line-height: 1.65; margin-bottom: 14px; }
-  .service-detail { font-size: 10px; letter-spacing: 1.2px; }
-
-  .how-grid { gap: 50px; }
-  .how-step { gap: 22px; padding: 22px 0; }
-  .how-step-num { font-size: 30px; min-width: 34px; }
-  .how-step-title { font-size: 18px; margin-bottom: 6px; }
-  .how-step-desc { font-size: 12px; line-height: 1.65; }
-  .how-visual { padding: 36px 36px; }
-  .how-visual-title { font-size: 26px; }
-  .how-visual-sub { font-size: 10px; margin-bottom: 26px; }
-  .how-visual-stat { margin-bottom: 18px; }
-  .how-visual-stat-num { font-size: 40px; }
-  .how-visual-stat-label { font-size: 10px; }
-  .how-visual-divider { margin: 18px auto; }
-
-  .pricing-grid { gap: 18px; }
-  .pricing-card { padding: 30px 26px; }
-  .pricing-name { font-size: 22px; }
-  .pricing-tagline { margin-bottom: 20px; }
-  .pricing-price { font-size: 40px; }
-  .pricing-unit { margin-bottom: 24px; }
-  .pricing-features { gap: 9px; margin-bottom: 26px; }
-  .pricing-features li { font-size: 12px; }
-  .btn-outline, .btn-outline-light { padding: 12px; font-size: 9px; letter-spacing: 2px; }
-
-  .about-grid { gap: 52px; }
-  .about-values { gap: 20px; margin-top: 28px; }
-  .about-value-title { font-size: 17px; }
-  .about-value-desc { font-size: 12px; line-height: 1.65; }
-  .about-quote { padding: 38px 36px; }
-  .about-quote-mark { font-size: 82px; margin-bottom: 16px; }
-  .about-quote-text { font-size: 20px; line-height: 1.45; }
-
-  .faq-grid { gap: 0 52px; }
-  .faq-item { padding: 20px 0; }
-  .faq-q { font-size: 17px; margin-bottom: 7px; }
-  .faq-a { font-size: 12px; line-height: 1.65; }
-
-  .cta-band { padding: 52px 64px; }
-  .cta-band-title { font-size: clamp(28px, 3vw, 40px); }
-  .btn-gold { padding: 15px 28px; font-size: 10px; letter-spacing: 2px; }
-
-  .trust-bar { padding: 14px 64px; gap: 34px; }
-  .trust-item { font-size: 9px; letter-spacing: 1.6px; }
-
-  footer { padding: 38px 64px 24px; }
-  .footer-top { gap: 36px; margin-bottom: 32px; }
-  .footer-brand-name { font-size: 18px; }
-  .footer-brand-desc, .footer-col ul li a { font-size: 11px; }
-  .footer-bottom { padding-top: 18px; }
-
-  @media (max-width: 900px) {
-    nav { height: 64px; padding: 0 20px; }
-    .nav-links.open { top: 64px; padding: 18px 24px; gap: 16px; }
-    .hero-left { padding: 42px 24px 46px; }
-    .hero-headline { font-size: clamp(36px, 12vw, 48px); }
-    .hero-sub { margin-bottom: 24px; }
-    .process-strip { grid-template-columns: 1fr; padding: 28px 24px; gap: 18px; }
-    .process-item { padding-bottom: 18px; }
-    .process-item:nth-child(3) { border-bottom: 1px solid rgba(255,255,255,0.08); }
-    section { padding: 48px 24px; }
-    .section-sub { margin-bottom: 28px; }
-    .service-card { padding: 26px 24px; }
-    .pricing-card { padding: 28px 24px; }
-    .about-quote { padding: 32px 28px; }
-    .cta-band { padding: 42px 24px; gap: 26px; }
-    .trust-bar { padding: 14px 24px; gap: 16px; }
-    footer { padding: 34px 24px 22px; }
-    .footer-top { grid-template-columns: 1fr; gap: 24px; margin-bottom: 28px; }
-  }
-
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition:none!important; animation:none!important; scroll-behavior:auto!important; } .reveal { opacity:1; transform:none; } }
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#home" class="nav-logo" aria-label="Thread and Oak Laundry Co home">
-    <div class="nav-logo-icon">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B2A3B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 3c0 0-4 3-4 7s4 5 4 9"/>
-        <path d="M12 3c0 0 4 3 4 7s-4 5-4 9"/>
-        <path d="M8 10c0 0 1.5 2 4 2s4-2 4-2"/>
-        <line x1="12" y1="3" x2="12" y2="2"/>
-        <circle cx="12" cy="1.5" r="1" fill="#1B2A3B" stroke="none"/>
-      </svg>
-    </div>
-    <div class="nav-logo-text">
-      <div class="brand">THREAD &amp; OAK</div>
-      <div class="sub">Laundry Co.</div>
-    </div>
-  </a>
-  <div class="nav-links" id="nav-links">
-    <a href="#services">Services</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#about">About Us</a>
-    <a href="#faq">FAQ</a>
-    <a href="order.html" class="nav-cta">Schedule Pickup</a>
-  </div>
-  <div class="nav-hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="home">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Serving Cary &amp; Morrisville</div>
-    <h1 class="hero-headline">Laundry Done.<br><em>Weekend Saved.</em></h1>
-    <p class="hero-sub">Premium laundry pickup &amp; delivery<br>for busy professionals &amp; families</p>
-    <div class="hero-actions">
-      <a href="order.html" class="btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Schedule Your Pickup
-      </a>
-      <div class="hero-trust">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        Easy scheduling. Text updates. On your time.
-      </div>
-     <p class="hero-contact">
-Questions? <strong>Call or text</strong>
-<a href="tel:+19194354608">(919) 435-4608</a>
-</p>
-    </div>
-   
-  </div>
-  <div class="hero-right" role="img" aria-label="Thread and Oak branded laundry bag">
-    <div class="hero-bag-wrap">
-      <div class="hero-bag-emblem">
-        <svg width="70" height="70" viewBox="0 0 70 70" fill="none" stroke="rgba(168,137,94,0.8)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="35" cy="35" r="32"/>
-          <line x1="35" y1="18" x2="35" y2="52"/>
-          <path d="M35 18 Q27 22 26 30 Q25 38 35 40"/>
-          <path d="M35 18 Q43 22 44 30 Q45 38 35 40"/>
-          <path d="M29 26 Q32 24 35 26 Q38 24 41 26"/>
-          <path d="M27 34 Q31 32 35 34 Q39 32 43 34"/>
-          <line x1="26" y1="52" x2="44" y2="52"/>
-        </svg>
-      </div>
-      <div>
-        <div class="hero-bag-name">THREAD &amp; OAK</div>
-        <div class="hero-bag-sub">Laundry Co.</div>
-      </div>
-      <div class="hero-bag-tagline">Laundry Done.<br>Weekend Saved.</div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS STRIP -->
-<div class="process-strip" role="list">
-  <div class="process-item" role="listitem">
-    <div class="process-icon" aria-hidden="true">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-    </div>
-    <div>
-      <div class="process-label">We Pick Up</div>
-      <div class="process-desc">Schedule online. We come to your door.</div>
-    </div>
-  </div>
-  <div class="process-item" role="listitem">
-    <div class="process-icon" aria-hidden="true">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-    </div>
-    <div>
-      <div class="process-label">We Wash &amp; Fold</div>
-      <div class="process-desc">Premium care for your clothes and linens.</div>
-    </div>
-  </div>
-  <div class="process-item" role="listitem">
-    <div class="process-icon" aria-hidden="true">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-    </div>
-    <div>
-      <div class="process-label">We Deliver</div>
-      <div class="process-desc">Neatly folded. On time. Right to your door.</div>
-    </div>
-  </div>
-  <div class="process-item" role="listitem">
-    <div class="process-icon" aria-hidden="true">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-    </div>
-    <div>
-      <div class="process-label">You Enjoy</div>
-      <div class="process-desc">Fresh laundry. More time. Weekends back.</div>
-    </div>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-eyebrow">What We Offer</div>
-  <h2 class="section-title">Services built for <em>real life</em></h2>
-  <p class="section-sub">Everything handled with care — from your everyday wash to your most delicate items. No hidden fees, no tipping prompts.</p>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <div class="service-name">Wash &amp; Fold</div>
-      <p class="service-desc">Your everyday laundry sorted, washed in cold water with premium detergent, dried at low heat, and folded to your preference. Returned within 48 hours.</p>
-      <div class="service-detail">From $1.99 / lb</div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-name">Delicate Care</div>
-      <p class="service-desc">Athletic wear, delicates, and special-care items handled with extra attention. Add care notes for gentle washing, low heat, or hang-dry preferences.</p>
-      <div class="service-detail">Handled by request</div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-name">Household Linens</div>
-      <p class="service-desc">Sheets, towels, duvet covers, and table linens washed, dried, and folded. We handle the bulky loads so your weekends stay free.</p>
-      <div class="service-detail">From $1.99 / lb</div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section id="how-it-works">
-  <div class="how-grid">
-    <div>
-      <div class="section-eyebrow">The Process</div>
-      <h2 class="section-title">Simple as <em>three steps</em></h2>
-      <p class="section-sub">We built Thread &amp; Oak around one idea: your time is worth more than laundry.</p>
-      <div class="how-steps">
-        <div class="how-step">
-          <div class="how-step-num">1</div>
-          <div>
-            <div class="how-step-title">Schedule online</div>
-            <p class="how-step-desc">Pick a pickup window that works for you. We serve Cary, Morrisville, and nearby launch neighborhoods. Text confirmations included.</p>
-          </div>
-        </div>
-        <div class="how-step">
-          <div class="how-step-num">2</div>
-          <div>
-            <div class="how-step-title">We handle everything</div>
-            <p class="how-step-desc">Leave your bag at the door. We pick up, wash with premium detergent, dry on low heat, fold to preference, and package your laundry with care.</p>
-          </div>
-        </div>
-        <div class="how-step">
-          <div class="how-step-num">3</div>
-          <div>
-            <div class="how-step-title">Clean clothes, delivered</div>
-            <p class="how-step-desc">Your laundry is back at your door within 48 hours, neatly folded and ready to put away. Enjoy your weekend.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="how-visual" aria-hidden="true">
-      <div class="how-visual-inner">
-        <div class="how-visual-title">Thread &amp; Oak</div>
-        <div class="how-visual-sub">By the numbers</div>
-
-        <div class="how-visual-stat">
-          <div class="how-visual-stat-num">48h</div>
-          <div class="how-visual-stat-label">Standard turnaround</div>
-        </div>
-
-        <div class="how-visual-divider"></div>
-
-        <div class="how-visual-stat">
-          <div class="how-visual-stat-num">20lb</div>
-          <div class="how-visual-stat-label">Simple order minimum</div>
-        </div>
-
-        <div class="how-visual-divider"></div>
-
-        <div class="how-visual-stat">
-          <div class="how-visual-stat-num">0</div>
-          <div class="how-visual-stat-label">Tipping prompts</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="section-eyebrow">Pricing</div>
-  <h2 class="section-title">Transparent. <em>No surprises.</em></h2>
-  <p class="section-sub">No hidden fees, no tipping prompts, and a simple 20 lb minimum. Just clean laundry at a fair price.</p>
-  <div class="pricing-grid">
-    <div class="pricing-card">
-      <div class="pricing-name">Single Order</div>
-      <div class="pricing-tagline">Perfect for trying us out</div>
-      <div class="pricing-price">$1.99</div>
-      <div class="pricing-unit">per pound · 20 lb minimum</div>
-      <ul class="pricing-features">
-        <li>Wash, dry &amp; fold</li>
-        <li>Premium detergent</li>
-        <li>48-hour turnaround</li>
-        <li>Pickup &amp; delivery included</li>
-        <li>Text notifications</li>
-      </ul>
-      <a href="order.html" class="btn-outline">Get Started</a>
-    </div>
-    <div class="pricing-card featured">
-      <div class="pricing-badge">Most Popular</div>
-      <div class="pricing-name">Weekly Plan</div>
-      <div class="pricing-tagline">For busy households</div>
-      <div class="pricing-price">$1.89</div>
-      <div class="pricing-unit">per pound · 20 lb minimum · weekly pickup</div>
-      <ul class="pricing-features">
-        <li>Everything in Single</li>
-        <li>Priority scheduling</li>
-        <li>Dedicated laundry profile</li>
-        <li>Folding preferences saved</li>
-        <li>Monthly billing</li>
-      </ul>
-      <a href="order.html" class="btn-outline-light">Schedule Weekly</a>
-    </div>
-    <div class="pricing-card">
-      <div class="pricing-name">Family Plan</div>
-      <div class="pricing-tagline">Two kids, dual income, no time</div>
-      <div class="pricing-price">$1.79</div>
-      <div class="pricing-unit">per pound · 20 lb minimum · bi-weekly pickup</div>
-      <ul class="pricing-features">
-        <li>Everything in Weekly</li>
-        <li>Linens &amp; towels included</li>
-        <li>Separate bag sorting</li>
-        <li>Kids items handled gently</li>
-        <li>Flexible scheduling</li>
-      </ul>
-      <a href="order.html" class="btn-outline">Get Started</a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-grid">
-    <div>
-      <div class="section-eyebrow">About Us</div>
-      <h2 class="section-title">Built for <em>Cary &amp; Morrisville</em></h2>
-      <p class="section-sub">Thread &amp; Oak was built for Cary and Morrisville families and professionals who have better things to do on a Saturday than laundry.</p>
-      <div class="about-values">
-        <div class="about-value">
-          <div class="about-value-marker"></div>
-          <div>
-            <div class="about-value-title">Reliability over everything</div>
-            <p class="about-value-desc">When we say 48 hours, we mean 48 hours. You'll get a text when we pick up and a text when we're on the way back.</p>
-          </div>
-        </div>
-        <div class="about-value">
-          <div class="about-value-marker"></div>
-          <div>
-            <div class="about-value-title">Premium without the price</div>
-            <p class="about-value-desc">We use high-quality detergents and treat your clothes like our own. No corners cut.</p>
-          </div>
-        </div>
-        <div class="about-value">
-          <div class="about-value-marker"></div>
-          <div>
-            <div class="about-value-title">Local and accountable</div>
-            <p class="about-value-desc">We're local, reachable, and accountable. Every order has a real person behind it.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="about-quote">
-      <span class="about-quote-mark" aria-hidden="true">"</span>
-      <p class="about-quote-text">Your weekends are for your family, your hobbies, your rest — not laundry. We handle the pile so you never have to think about it.</p>
-      <div class="about-quote-attr">Thread &amp; Oak Laundry Co. — Cary &amp; Morrisville, NC</div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="section-eyebrow">Questions</div>
-  <h2 class="section-title">Frequently <em>asked</em></h2>
-  <p class="section-sub" style="margin-bottom: 48px;">Everything you need to know before your first pickup.</p>
-  <div class="faq-grid">
-    <div class="faq-item">
-      <div class="faq-q">What areas do you serve?</div>
-      <p class="faq-a">We currently serve Cary and Morrisville — including neighborhoods like Amberly, Preston, Carpenter Village, Graystone, Kitts Creek, and nearby areas. Not sure if we cover your address? Send us a note.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How does pickup work?</div>
-      <p class="faq-a">Schedule online, leave your bag at the door during your pickup window, and we take it from there. No need to be home.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What detergent do you use?</div>
-      <p class="faq-a">We use premium detergent and offer a fragrance-free option for sensitive skin. If you have a preference or allergy, add it to your order notes and we'll accommodate it whenever possible.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What if something is damaged?</div>
-      <p class="faq-a">We treat every order with care. If something goes wrong, reach out right away and we will review it with you and make it right whenever possible.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do you handle delicates?</div>
-      <p class="faq-a">Yes. Delicates and hang-dry items can be handled by request. Just flag them in your order notes and separate them if needed.</p>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">How do I pay?</div>
-      <p class="faq-a">We accept major payment methods listed during scheduling. You will see the order details clearly, and there are no tipping prompts.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SCHEDULE / CTA -->
-<div id="schedule" class="cta-band">
-  <div>
-    <h2 class="cta-band-title">Ready to get your <em>weekends back?</em></h2>
-    <p class="cta-band-sub">Start with a one-time order. No subscription required.</p>
-  </div>
-  <a href="order.html" class="btn-gold">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-    Schedule My Pickup
-  </a>
-</div>
-
-<!-- TRUST BAR -->
-<div class="trust-bar" role="list">
-  <div class="trust-item" role="listitem">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-    Serving Cary &amp; Morrisville
-  </div>
-  <div class="trust-divider" aria-hidden="true"></div>
-  <div class="trust-item" role="listitem">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-    Transparent Pricing
-  </div>
-  <div class="trust-divider" aria-hidden="true"></div>
-  <div class="trust-item" role="listitem">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-    No Hidden Fees
-  </div>
-  <div class="trust-divider" aria-hidden="true"></div>
-  <div class="trust-item" role="listitem">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-    No Tipping Prompts
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div>
-      <div class="footer-brand-name">THREAD &amp; OAK</div>
-      <div class="footer-brand-sub">Laundry Co. · Cary &amp; Morrisville, NC</div>
-      <p class="footer-brand-desc">Premium laundry pickup and delivery for busy professionals and families in Cary and Morrisville.</p>
-    </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Services</div>
-      <ul>
-        <li><a href="#services">Wash &amp; Fold</a></li>
-        <li><a href="#services">Delicate Care</a></li>
-        <li><a href="#services">Household Linens</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Company</div>
-      <ul>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="order.html">Schedule Pickup</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Contact</div>
-      <ul>
-  <li>
-    <a href="mailto:info@threadandoak.com">info@threadandoak.com</a>
-  </li>
-
-  <li>
-    <a href="tel:+19194354608">(919) 435-4608</a>
-  </li>
-
-  <li>
-    <a href="order.html">Schedule a Pickup</a>
-  </li>
-
-  <li>
-    <a href="#faq">Questions? See FAQ</a>
-  </li>
-</ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-bottom-left">&copy; 2026 Thread &amp; Oak Laundry Co. · Cary &amp; Morrisville, NC · All rights reserved.</div>
-   <div class="footer-bottom-right">
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="terms-of-service.html">Terms of Service</a>
-</div>
-  </div>
-</footer>
-
+<nav class="mobile-nav" aria-label="Mobile navigation"><div class="mobile-nav-inner"><div class="mobile-brand">THREAD &amp; OAK</div><button class="mobile-menu-btn" id="mobileMenuButton" type="button" aria-expanded="false" aria-controls="mobileMenu">Menu</button></div><div class="mobile-menu" id="mobileMenu"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#routes">Routes</a><a href="#how-it-works">How It Works</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="order.html" class="mobile-cta">Schedule Pickup</a></div></nav>
+<section class="hero-image-home" id="home" aria-label="Thread and Oak Laundry Co homepage hero"><img src="images/thread-oak-home-hero.png" alt="Thread & Oak Laundry Co. Laundry Done. Weekend Saved."><a href="#home" class="hotspot home-link" aria-label="Home"></a><a href="#services" class="hotspot services-link" aria-label="Services"></a><a href="#pricing" class="hotspot pricing-link" aria-label="Pricing"></a><a href="#routes" class="hotspot routes-link" aria-label="Routes"></a><a href="#how-it-works" class="hotspot how-link" aria-label="How It Works"></a><a href="#about" class="hotspot about-link" aria-label="About"></a><a href="#faq" class="hotspot faq-link" aria-label="FAQ"></a><a href="order.html" class="hotspot schedule-top-link" aria-label="Schedule Pickup"></a><a href="order.html" class="hotspot schedule-main-link" aria-label="Schedule Pickup"></a></section>
+<div class="process-strip" role="list"><div class="process-item" role="listitem"><div class="process-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 37h31V18H6v19z"/><path d="M37 25h10l10 10v2H37V25z"/><circle cx="18" cy="45" r="5"/><circle cx="48" cy="45" r="5"/></svg></div><div><div class="process-label">We Pick Up</div><div class="process-desc">On your scheduled route day.</div></div></div><div class="process-item" role="listitem"><div class="process-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><rect x="14" y="8" width="36" height="48" rx="2"/><path d="M20 16h12"/><circle cx="32" cy="37" r="12"/><path d="M24 37c4-4 10 4 16 0"/></svg></div><div><div class="process-label">We Wash</div><div class="process-desc">Premium care with quality products.</div></div></div><div class="process-item" role="listitem"><div class="process-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 20h36l6 8H8l6-8z"/><path d="M9 28h46v10H9z"/><path d="M11 38h42v10H11z"/><path d="M13 48h38v8H13z"/></svg></div><div><div class="process-label">We Fold</div><div class="process-desc">Neatly folded &amp; ready to enjoy.</div></div></div><div class="process-item" role="listitem"><div class="process-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 31L32 10l24 21"/><path d="M16 28v26h32V28"/><path d="M27 54V38h10v16"/></svg></div><div><div class="process-label">We Deliver</div><div class="process-desc">Back to your door in 48 hours.</div></div></div></div>
+<section id="services" class="reveal"><div class="section-eyebrow">What We Offer</div><h2 class="section-title">Services built for <em>real life</em></h2><p class="section-sub">Everything handled with care — from everyday wash to household linens and special-care items. No hidden fees, no tipping prompts.</p><div class="services-grid"><div class="service-card"><div class="service-num">01</div><div class="service-name">Wash &amp; Fold</div><p class="service-desc">Your everyday laundry washed, dried, and folded to your preference. Returned within 48 hours.</p><div class="service-detail">From $1.99 / lb</div></div><div class="service-card"><div class="service-num">02</div><div class="service-name">Delicate Care</div><p class="service-desc">Athletic wear, delicates, and special-care items handled with extra attention and custom care notes.</p><div class="service-detail">Handled by request</div></div><div class="service-card"><div class="service-num">03</div><div class="service-name">Household Linens</div><p class="service-desc">Sheets, towels, duvet covers, and linens washed, dried, folded, and returned ready to put away.</p><div class="service-detail">From $1.99 / lb</div></div></div></section>
+<section id="routes" class="reveal"><div class="section-eyebrow">Neighborhood Routes</div><h2 class="section-title">Dedicated pickup days for <em>Morrisville</em></h2><p class="section-sub">We currently serve select Morrisville neighborhoods through dedicated weekly pickup routes. This keeps service dependable, efficient, and easy to remember.</p><div class="routes-grid"><div class="route-card"><div class="route-day">Monday</div><div class="route-title">Pickup → Wednesday Delivery</div><ul><li>Kitts Creek</li><li>Keystone Crossing</li><li>Townes at Everett Crossing</li></ul></div><div class="route-card"><div class="route-day">Tuesday</div><div class="route-title">Pickup → Thursday Delivery</div><ul><li>Providence Place</li><li>Mason Farms by Ashton Woods</li></ul></div><div class="route-card"><div class="route-day">Not Listed?</div><div class="route-title">Request Your Neighborhood</div><p class="route-note">We are expanding thoughtfully throughout Morrisville. If your neighborhood is not listed, tell us on the order form or text <a href="tel:+19194354608">(919) 435-4608</a>.</p></div></div></section>
+<section id="how-it-works" class="reveal"><div class="how-grid"><div><div class="section-eyebrow">The Process</div><h2 class="section-title">Simple as <em>three steps</em></h2><p class="section-sub">Thread &amp; Oak was built around one idea: your time is worth more than laundry.</p><div class="how-steps"><div class="how-step"><div class="how-step-num">1</div><div><div class="how-step-title">Join your neighborhood route</div><p class="how-step-desc">Select your neighborhood, confirm your pickup day, and leave your bag at your door during your route window.</p></div></div><div class="how-step"><div class="how-step-num">2</div><div><div class="how-step-title">We handle everything</div><p class="how-step-desc">We pick up, wash, dry, fold, and package your laundry with care while keeping you updated by text.</p></div></div><div class="how-step"><div class="how-step-num">3</div><div><div class="how-step-title">Clean clothes, delivered</div><p class="how-step-desc">Your laundry is returned to your door within 48 hours, neatly folded and ready to put away.</p></div></div></div></div><div class="how-visual" aria-hidden="true"><div class="how-visual-inner"><div class="how-visual-title">Thread &amp; Oak</div><div class="how-visual-sub">By the numbers</div><div class="how-visual-stat"><div class="how-visual-stat-num">48h</div><div class="how-visual-stat-label">Standard turnaround</div></div><div class="how-visual-divider"></div><div class="how-visual-stat"><div class="how-visual-stat-num">20lb</div><div class="how-visual-stat-label">Simple order minimum</div></div><div class="how-visual-divider"></div><div class="how-visual-stat"><div class="how-visual-stat-num">0</div><div class="how-visual-stat-label">Tipping prompts</div></div></div></div></div></section>
+<section id="pricing" class="reveal"><div class="section-eyebrow">Pricing</div><h2 class="section-title">Transparent. <em>No surprises.</em></h2><p class="section-sub">No hidden fees, no tipping prompts, and a simple 20 lb minimum. Just clean laundry at a fair price.</p><div class="pricing-grid"><div class="pricing-card"><div class="pricing-name">Single Order</div><div class="pricing-tagline">Perfect for trying us out</div><div class="pricing-price">$1.99</div><div class="pricing-unit">per pound · 20 lb minimum</div><ul class="pricing-features"><li>Wash, dry &amp; fold</li><li>Premium detergent</li><li>48-hour turnaround</li><li>Pickup &amp; delivery included</li><li>Text notifications</li></ul><a href="order.html" class="btn-outline">Get Started</a></div><div class="pricing-card featured"><div class="pricing-badge">Most Popular</div><div class="pricing-name">Weekly Plan</div><div class="pricing-tagline">For busy households</div><div class="pricing-price">$1.89</div><div class="pricing-unit">per pound · 20 lb minimum · weekly pickup</div><ul class="pricing-features"><li>Everything in Single</li><li>Priority scheduling</li><li>Dedicated laundry profile</li><li>Folding preferences saved</li><li>Monthly billing</li></ul><a href="order.html" class="btn-outline-light">Schedule Weekly</a></div><div class="pricing-card"><div class="pricing-name">Household Plan</div><div class="pricing-tagline">For steady household laundry</div><div class="pricing-price">$1.79</div><div class="pricing-unit">per pound · 35 lb minimum · recurring pickup</div><ul class="pricing-features"><li>Everything in Weekly</li><li>Linens &amp; towels included</li><li>Separate bag sorting</li><li>Kids items handled gently</li><li>Weekly or bi-weekly scheduling</li></ul><a href="order.html" class="btn-outline">Get Started</a></div></div></section>
+<section id="about" class="reveal"><div class="about-grid"><div><div class="section-eyebrow">About Us</div><h2 class="section-title">Launching with care in <em>Morrisville</em></h2><p class="section-sub">Thread &amp; Oak was built for busy families and professionals who have better things to do on Saturday than laundry.</p><p class="section-sub">We are launching in select Morrisville neighborhoods with dedicated weekly pickup routes. By serving one area at a time, we reduce unnecessary driving, provide dependable pickup days, and deliver every order within our promised 48-hour turnaround.</p><div class="about-values"><div class="about-value"><div class="about-value-marker"></div><div><div class="about-value-title">Reliability over everything</div><p class="about-value-desc">You get clear route days, text updates, and laundry returned when promised.</p></div></div><div class="about-value"><div class="about-value-marker"></div><div><div class="about-value-title">Premium without the hassle</div><p class="about-value-desc">We treat your clothes like our own and keep the process simple from pickup to delivery.</p></div></div><div class="about-value"><div class="about-value-marker"></div><div><div class="about-value-title">Local and accountable</div><p class="about-value-desc">We are local, reachable, and focused on building trust one neighborhood at a time.</p></div></div></div></div><div class="about-quote"><span class="about-quote-mark" aria-hidden="true">“</span><p class="about-quote-text">Your weekends are for your family, your hobbies, your rest — not laundry. We handle the pile so you never have to think about it.</p><div class="about-quote-attr">Thread &amp; Oak Laundry Co. · Morrisville, NC</div></div></div></section>
+<section id="faq" class="reveal"><div class="section-eyebrow">Questions</div><h2 class="section-title">Frequently <em>asked</em></h2><p class="section-sub">Everything you need to know before your first pickup.</p><div class="faq-grid"><div class="faq-item"><div class="faq-q">What areas do you serve?</div><p class="faq-a">We are currently launching in select Morrisville neighborhoods: Kitts Creek, Keystone Crossing, Townes at Everett Crossing, Providence Place, and Mason Farms by Ashton Woods. If your neighborhood is not listed, submit your neighborhood on the order form or text us at <a href="tel:+19194354608">(919) 435-4608</a>.</p></div><div class="faq-item"><div class="faq-q">How does pickup work?</div><p class="faq-a">Select your neighborhood route, leave your laundry bag at your door during your pickup window, and we take it from there. You do not need to be home.</p></div><div class="faq-item"><div class="faq-q">What detergent do you use?</div><p class="faq-a">We use premium detergent and offer a fragrance-free option for sensitive skin. If you have a preference or allergy, add it to your order notes and we will accommodate it whenever possible.</p></div><div class="faq-item"><div class="faq-q">What if my neighborhood is not listed?</div><p class="faq-a">Choose “My neighborhood is not listed” on the order form and tell us your neighborhood and ZIP code. We will use those requests to decide where to expand next.</p></div><div class="faq-item"><div class="faq-q">Do you handle delicates?</div><p class="faq-a">Not at this time. Thread & Oak currently focuses on everyday wash-and-fold laundry only. Please do not include dry-clean-only, delicate, hang-dry, or irreplaceable items in your laundry bag.</p></div><div class="faq-item"><div class="faq-q">How do I pay?</div><p class="faq-a">We accept major payment methods listed during scheduling. You will see the order details clearly, and there are no tipping prompts.</p></div></div></section>
+<div id="schedule" class="cta-band"><div><h2 class="cta-band-title">Ready to get your <em>weekends back?</em></h2><p class="cta-band-sub">Start with a one-time order. No subscription required.</p></div><a href="order.html" class="btn-gold">Schedule My Pickup</a></div>
+<div class="trust-bar" role="list"><div class="trust-item" role="listitem">Select Morrisville Neighborhoods</div><div class="trust-divider" aria-hidden="true"></div><div class="trust-item" role="listitem">Transparent Pricing</div><div class="trust-divider" aria-hidden="true"></div><div class="trust-item" role="listitem">No Hidden Fees</div><div class="trust-divider" aria-hidden="true"></div><div class="trust-item" role="listitem">No Tipping Prompts</div></div>
+<footer><div class="footer-top"><div><div class="footer-brand-name">THREAD &amp; OAK</div><div class="footer-brand-sub">Laundry Co. · Morrisville, NC</div><p class="footer-brand-desc">Premium laundry pickup and delivery for busy professionals and families in select Morrisville neighborhoods.</p></div><div class="footer-col"><div class="footer-col-title">Services</div><ul><li><a href="#services">Wash &amp; Fold</a></li><li><a href="#services">Delicate Care</a></li><li><a href="#services">Household Linens</a></li><li><a href="#pricing">Pricing</a></li></ul></div><div class="footer-col"><div class="footer-col-title">Company</div><ul><li><a href="#routes">Routes</a></li><li><a href="#how-it-works">How It Works</a></li><li><a href="#about">About Us</a></li><li><a href="#faq">FAQ</a></li></ul></div><div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="mailto:info@threadandoak.com">info@threadandoak.com</a></li><li><a href="tel:+19194354608">(919) 435-4608</a></li><li><a href="order.html">Schedule a Pickup</a></li><li><a href="#faq">Questions? See FAQ</a></li></ul></div></div><div class="footer-bottom"><div class="footer-bottom-left">&copy; 2026 Thread &amp; Oak Laundry Co. · Morrisville, NC · All rights reserved.</div><div class="footer-bottom-right"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div></div></footer>
 <script>
-  const navbar = document.getElementById('navbar');
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
-  });
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-  hamburger.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') navLinks.classList.toggle('open');
-  });
-
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        navLinks.classList.remove('open');
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+const mobileMenuButton=document.getElementById('mobileMenuButton');const mobileMenu=document.getElementById('mobileMenu');mobileMenuButton.addEventListener('click',()=>{const isOpen=mobileMenu.classList.toggle('open');mobileMenuButton.setAttribute('aria-expanded',String(isOpen));});mobileMenu.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{mobileMenu.classList.remove('open');mobileMenuButton.setAttribute('aria-expanded','false');});});document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}});});const revealEls=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.12});revealEls.forEach(el=>observer.observe(el));}else{revealEls.forEach(el=>el.classList.add('visible'));}
 </script>
 </body>
 </html>
