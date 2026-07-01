@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms of Service for Thread & Oak Laundry Co., a premium porch pickup and delivery laundry service launching in select Morrisville neighborhoods." />
+  <title>Terms of Service — Thread & Oak Laundry Co.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #142638;
+      --navy-2: #0f1f30;
+      --ink: #1b2a3a;
+      --cream: #f7f2e9;
+      --paper: #fffdf8;
+      --mist: #e6ded0;
+      --gold: #c8a261;
+      --gold-dark: #aa8650;
+      --muted: #6f7780;
+      --line: rgba(20, 38, 56, 0.14);
+      --shadow: 0 24px 70px rgba(20, 38, 56, 0.12);
+      --radius: 18px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(200, 162, 97, 0.12), transparent 34rem),
+        linear-gradient(180deg, var(--cream) 0%, #f2eadf 100%);
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .site-header {
+      background: linear-gradient(135deg, var(--navy-2), var(--navy));
+      color: var(--cream);
+      border-bottom: 1px solid rgba(200, 162, 97, 0.45);
+    }
+
+    .header-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 124px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: #0d2137;
+      border: 1px solid rgba(200, 162, 97, 0.5);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      flex: 0 0 auto;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-fallback {
+      font-family: "Playfair Display", serif;
+      color: var(--gold);
+      font-size: 1.05rem;
+      letter-spacing: 0.1em;
+      display: none;
+    }
+
+    .brand-wordmark {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      letter-spacing: 0.22em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-subline {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-subline::before,
+    .brand-subline::after {
+      content: "";
+      display: block;
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.9;
+    }
+
+    .home-link {
+      color: rgba(247, 242, 233, 0.88);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid rgba(200, 162, 97, 0.45);
+      border-radius: 999px;
+      padding: 12px 16px;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .home-link:hover {
+      background: rgba(200, 162, 97, 0.14);
+      color: var(--cream);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--navy), #18314a);
+      color: var(--cream);
+      padding: 68px 20px 86px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.74rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .hero-meta {
+      color: rgba(247, 242, 233, 0.78);
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+    }
+
+    main {
+      width: min(960px, calc(100% - 40px));
+      margin: -48px auto 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .summary-card {
+      background: var(--paper);
+      border: 1px solid rgba(200, 162, 97, 0.35);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 5vw, 42px);
+      margin-bottom: 24px;
+    }
+
+    .summary-card h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.55rem, 4vw, 2.35rem);
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .summary-card p {
+      color: var(--muted);
+      max-width: 820px;
+    }
+
+    .summary-card strong { color: var(--navy); font-weight: 600; }
+
+    .terms-card {
+      background: rgba(255, 253, 248, 0.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 48px rgba(20, 38, 56, 0.08);
+      overflow: hidden;
+    }
+
+    .terms-section {
+      display: grid;
+      grid-template-columns: 138px 1fr;
+      gap: clamp(18px, 4vw, 34px);
+      padding: clamp(28px, 5vw, 42px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .terms-section:last-child { border-bottom: 0; }
+
+    .section-number {
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding-top: 8px;
+    }
+
+    .section-content h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.45rem, 4vw, 2rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-content p + p,
+    .section-content p + ul,
+    .section-content ul + p,
+    .section-content ul + ul {
+      margin-top: 14px;
+    }
+
+    .section-content p {
+      color: #425061;
+      font-size: 0.98rem;
+    }
+
+    .section-content ul {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      margin-left: 0;
+    }
+
+    .section-content li {
+      position: relative;
+      padding-left: 22px;
+      color: #425061;
+      font-size: 0.98rem;
+    }
+
+    .section-content li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+      width: 9px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .rate-list {
+      background: #f7f0e4;
+      border: 1px solid rgba(200, 162, 97, 0.28);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .rate-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid rgba(20, 38, 56, 0.08);
+      padding: 10px 0 10px 22px;
+    }
+
+    .rate-list li:last-child { border-bottom: 0; }
+
+    .rate-list strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .rate-list span {
+      color: var(--gold-dark);
+      font-weight: 600;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .contact-card {
+      margin-top: 28px;
+      background: linear-gradient(135deg, var(--navy), #18314a);
+      color: var(--cream);
+      border-radius: var(--radius);
+      padding: clamp(28px, 5vw, 42px);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card .eyebrow { margin-bottom: 12px; }
+
+    .contact-card h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(1.7rem, 5vw, 2.75rem);
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: rgba(247, 242, 233, 0.82);
+      margin-bottom: 18px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      color: var(--cream);
+      text-decoration: none;
+      border: 1px solid rgba(200, 162, 97, 0.45);
+      border-radius: 999px;
+      padding: 11px 15px;
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .contact-links a:hover { background: rgba(200, 162, 97, 0.14); }
+
+    footer {
+      text-align: center;
+      padding: 26px 20px 42px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        min-height: auto;
+        padding: 24px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .brand {
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand-logo {
+        width: 62px;
+        height: 62px;
+      }
+
+      .brand-wordmark {
+        font-size: clamp(1.25rem, 7vw, 2rem);
+        letter-spacing: 0.14em;
+      }
+
+      .brand-subline {
+        font-size: 0.68rem;
+        letter-spacing: 0.28em;
+      }
+
+      .brand-subline::before,
+      .brand-subline::after {
+        width: 24px;
+      }
+
+      .home-link {
+        align-self: flex-start;
+      }
+
+      .hero { padding: 52px 20px 78px; }
+
+      main { width: min(100% - 28px, 960px); }
+
+      .terms-section {
+        grid-template-columns: 1fr;
+      }
+
+      .section-number { padding-top: 0; }
+
+      .rate-list li {
+        display: block;
+      }
+
+      .rate-list span {
+        display: block;
+        text-align: left;
+        margin-top: 4px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="https://threadandoak.com/" aria-label="Thread & Oak Laundry Co. home">
+        <div class="brand-logo">
+          <img src="images/oak-logo.png" alt="Thread & Oak Laundry Co. logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <span class="brand-fallback">T&amp;O</span>
+        </div>
+        <div>
+          <div class="brand-wordmark">Thread &amp; Oak</div>
+          <div class="brand-subline">Laundry Co.</div>
+        </div>
+      </a>
+
+      <a class="home-link" href="https://threadandoak.com/">← Back to Site</a>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="eyebrow">Legal · Service Agreement</div>
+    <h1 id="page-title">Terms of Service</h1>
+    <p class="hero-meta">Thread &amp; Oak Laundry Co. · Morrisville, NC · Last updated: June 2026</p>
+  </section>
+
+  <main>
+    <section class="summary-card" aria-labelledby="summary-title">
+      <h2 id="summary-title">Plain-English Summary</h2>
+      <p>
+        We pick up your laundry, wash and fold it with care, and deliver it back on your neighborhood route.
+        <strong>Single Order</strong> and <strong>Weekly Plan</strong> orders have a <strong>20 lb minimum</strong>.
+        <strong>Household Plan</strong> orders have a <strong>35 lb minimum</strong>. Please empty pockets and do not include
+        hazardous, contaminated, dry-clean-only, delicate special-care, hang-dry, or pest-infested items. By scheduling a pickup
+        or submitting an order form, you agree to the terms below.
+      </p>
+    </section>
+
+    <div class="terms-card">
+      <section class="terms-section" id="acceptance-of-terms">
+        <div class="section-number">Section 01</div>
+        <div class="section-content">
+          <h2>Acceptance of Terms</h2>
+          <p>By scheduling a pickup, submitting a service request, completing an order form, or using any service offered by Thread &amp; Oak Laundry Co. ("Thread &amp; Oak," "we," "us," or "our"), you ("Customer") agree to be bound by these Terms of Service. If you do not agree, please do not use our services.</p>
+          <p>These terms, together with our Privacy Policy and any order-specific instructions accepted by us, describe the agreement between you and Thread &amp; Oak Laundry Co.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="service-description-coverage-area">
+        <div class="section-number">Section 02</div>
+        <div class="section-content">
+          <h2>Service Description &amp; Coverage Area</h2>
+          <p>Thread &amp; Oak Laundry Co. provides residential laundry pickup, washing, drying, folding, and delivery services for select Morrisville, NC neighborhoods. Coverage area is limited and subject to change as our route availability changes.</p>
+          <p>Services may include:</p>
+          <ul>
+            <li>Wash, dry, and fold for everyday laundry and household items</li>
+            <li>Household linens such as towels, sheets, and washable bedding</li>
+            <li>Doorstep pickup and delivery within our active Morrisville service routes</li>
+            <li>Standard or fragrance-free detergent options, when available</li>
+          </ul>
+          <p>Thread &amp; Oak is not a dry cleaner. Dry-clean-only garments, leather, suede, formalwear, wedding gowns, delicate special-care items, hang-dry items, air-dry items, and other specialty items are accepted only if we agree in advance.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="pricing-minimums-billing">
+        <div class="section-number">Section 03</div>
+        <div class="section-content">
+          <h2>Pricing, Minimums &amp; Billing</h2>
+          <p>Pricing is charged per pound based on the weight recorded by Thread &amp; Oak at the time of pickup or processing. Our recorded weight is final unless there is a clear error.</p>
+          <p>Current rates and minimums:</p>
+          <ul class="rate-list">
+            <li><strong>Single Order</strong><span>$1.99/lb · 20 lb minimum</span></li>
+            <li><strong>Weekly Plan</strong><span>$1.89/lb · 20 lb minimum</span></li>
+            <li><strong>Household Plan</strong><span>$1.79/lb · 35 lb minimum</span></li>
+          </ul>
+          <p>If an order weighs less than the applicable minimum, the minimum charge still applies. Prices are subject to change with reasonable notice.</p>
+          <p>Payment is collected after your laundry is weighed and before delivery unless another arrangement has been approved. We accept major credit cards, Zelle, or other payment methods we make available. No tipping is expected or requested.</p>
+          <p>Invoices unpaid within 7 days of delivery may result in suspension of service until the balance is resolved.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="scheduling-pickup-delivery">
+        <div class="section-number">Section 04</div>
+        <div class="section-content">
+          <h2>Scheduling, Pickup &amp; Delivery</h2>
+          <p>Pickup and delivery are scheduled by neighborhood route. Your route day will be based on your selected neighborhood and current route availability. Our standard turnaround is within 48 hours unless otherwise stated or delayed by weather, holidays, customer instructions, staffing, unusually large orders, or other operational issues.</p>
+          <p>Customers are responsible for having laundry ready at the agreed pickup location during the scheduled route window. Thread &amp; Oak is not responsible for missed pickups caused by inaccessible locations, locked gates, animals, unsafe conditions, incorrect addresses, or laundry not being ready at pickup time.</p>
+          <p>Unless you give different instructions, you authorize Thread &amp; Oak to pick up and deliver laundry from/to the doorstep, porch, or other agreed location. Once an order is delivered to the agreed location, Thread &amp; Oak is not responsible for loss, theft, weather exposure, or damage that occurs after delivery.</p>
+          <p>We may send text or email notifications when we are on the way, when your order is picked up, when payment is ready, and when your order has been delivered.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="laundry-instructions-garment-care">
+        <div class="section-number">Section 05</div>
+        <div class="section-content">
+          <h2>Laundry Instructions &amp; Garment Care</h2>
+          <p>We follow the laundry preferences you provide when reasonably possible. Standard wash-and-fold service generally uses cold water, low heat, and careful folding unless a different process is agreed upon.</p>
+          <p>Customers are responsible for clearly identifying items that require special handling before pickup. Items that should not be machine washed, machine dried, or processed with standard wash-and-fold service should not be included unless Thread &amp; Oak has agreed in advance.</p>
+          <p>Please do not provide sensitive personal information unless it is necessary for us to complete your laundry order. If you provide allergy, fragrance sensitivity, detergent sensitivity, or special-care information, we use it only to fulfill your service preferences. While we take care to follow your preferences, we cannot guarantee a completely allergen-free or fragrance-free environment.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="liability-limits">
+        <div class="section-number">Section 06</div>
+        <div class="section-content">
+          <h2>Garment Care &amp; Liability Limits</h2>
+          <p>We take care with every order. However, laundering involves normal risks, including shrinkage, fading, bleeding, wear, loose stitching, missing buttons, damage to zippers, and changes to fabric texture.</p>
+          <p>Our maximum liability for any lost, damaged, or unsatisfactory item is limited to 10 times the per-pound rate charged for that order, unless otherwise required by law. We do not accept liability for designer, luxury, heirloom, sentimental, or irreplaceable items.</p>
+          <p>Thread &amp; Oak is not responsible for:</p>
+          <ul>
+            <li>Damage caused by pre-existing wear, weakness, defects, stains, shrinkage, or color loss</li>
+            <li>Color bleeding, dye transfer, shrinkage, or damage from items that cannot withstand normal laundering</li>
+            <li>Items left in pockets, including cash, cards, keys, electronics, documents, jewelry, cosmetics, pens, or personal belongings</li>
+            <li>Loss or damage to items not flagged as special-care before pickup</li>
+            <li>Items submitted without readable care labels</li>
+            <li>Normal wear resulting from the laundering process</li>
+          </ul>
+          <p>Please empty all pockets before pickup. Thread &amp; Oak is not liable for pocket items lost or damaged during laundering.</p>
+          <p>Claims for damaged, missing, or unsatisfactory items must be submitted within 48 hours of delivery by contacting info@threadandoak.com. Claims submitted after this window may not be eligible for rewash, credit, or review.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="cancellations-rescheduling">
+        <div class="section-number">Section 07</div>
+        <div class="section-content">
+          <h2>Cancellations &amp; Rescheduling</h2>
+          <p>Customers may cancel or reschedule with at least 2 hours notice before the scheduled pickup window at no charge. Cancellations with less than 2 hours notice may be subject to a $10 cancellation fee.</p>
+          <p>Thread &amp; Oak may cancel or reschedule pickups due to weather, staffing, vehicle issues, unsafe conditions, route changes, or other operational issues. We will notify customers as soon as reasonably possible.</p>
+          <p>Recurring plan customers may pause service with 24 hours notice. Consistent no-shows, late cancellations, unpaid balances, or inaccessible pickup locations may result in removal from recurring scheduling.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="prohibited-items">
+        <div class="section-number">Section 08</div>
+        <div class="section-content">
+          <h2>Prohibited Items</h2>
+          <p>The following items are not accepted and must not be included in your order:</p>
+          <ul>
+            <li>Items contaminated with hazardous materials, chemicals, gasoline, solvents, oils, or flammable substances</li>
+            <li>Items contaminated with blood, feces, urine, vomit, mold, mildew, or bodily waste beyond normal household soiling</li>
+            <li>Items infested or suspected to be infested with bed bugs, fleas, lice, roaches, rodents, or pests of any kind</li>
+            <li>Items containing sharp objects, needles, blades, or medical waste</li>
+            <li>Dry-clean-only garments without prior agreement</li>
+            <li>Delicate special-care, hang-dry, air-dry, leather, suede, formalwear, wedding gowns, or specialty garments without prior agreement</li>
+            <li>Rugs, mats, oversized bedding, or items exceeding individual machine capacity unless approved in advance</li>
+          </ul>
+          <p>Discovery of prohibited items may result in order refusal, return of items unwashed where safe, a handling fee of up to $25, suspension of service, or disposal of items that present a health or safety hazard where permitted by law.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="text-email-communications">
+        <div class="section-number">Section 09</div>
+        <div class="section-content">
+          <h2>Text &amp; Email Communications</h2>
+          <p>By providing your phone number and scheduling service with Thread &amp; Oak Laundry Co., you agree to receive service-related text messages and emails, including pickup confirmations, delivery updates, account notices, payment notices, and service-related communications. Message frequency varies. Message and data rates may apply. Reply STOP to opt out of non-essential text messages or HELP for assistance.</p>
+          <p>Marketing and promotional messages are optional and are not required to purchase services. If you choose to receive marketing or promotional messages, you may opt out at any time by replying STOP or contacting us at info@threadandoak.com.</p>
+          <p>We do not sell your phone number, email address, or messaging opt-in information to third parties.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="satisfaction-guarantee">
+        <div class="section-number">Section 10</div>
+        <div class="section-content">
+          <h2>Satisfaction Guarantee</h2>
+          <p>If you are unsatisfied with your order, contact us within 48 hours of delivery. At our discretion, we may re-wash the affected items at no charge, issue a service credit, or offer another reasonable resolution.</p>
+          <p>Our guarantee does not apply to issues caused by pre-existing garment conditions, customer error, prohibited items, items excluded under these terms, or instructions not provided before pickup.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="privacy">
+        <div class="section-number">Section 11</div>
+        <div class="section-content">
+          <h2>Privacy</h2>
+          <p>Your personal information is collected and used as described in our Privacy Policy. We do not sell your personal information. For full details, please review our Privacy Policy.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="limitation-of-liability">
+        <div class="section-number">Section 12</div>
+        <div class="section-content">
+          <h2>Limitation of Liability</h2>
+          <p>To the maximum extent permitted by law, Thread &amp; Oak Laundry Co., its owners, employees, contractors, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from use of our services.</p>
+          <p>In no event shall Thread &amp; Oak's total liability to any customer exceed the amount paid by that customer for the order giving rise to the claim, unless otherwise required by law.</p>
+          <p>You agree not to submit items with a value, condition, or sentimental importance that would make the liability limits in these terms unacceptable to you.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="governing-law-disputes">
+        <div class="section-number">Section 13</div>
+        <div class="section-content">
+          <h2>Governing Law &amp; Disputes</h2>
+          <p>These terms are governed by the laws of the State of North Carolina. Any disputes shall be resolved in the courts of Wake County, North Carolina, unless another venue is required by applicable law.</p>
+          <p>Before initiating any formal dispute, both parties agree to attempt resolution informally by contacting us at info@threadandoak.com. We will make reasonable efforts to resolve disputes promptly and fairly.</p>
+        </div>
+      </section>
+
+      <section class="terms-section" id="modifications">
+        <div class="section-number">Section 14</div>
+        <div class="section-content">
+          <h2>Modifications to These Terms</h2>
+          <p>Thread &amp; Oak Laundry Co. may update these Terms of Service from time to time. Changes will be posted to this page with an updated effective date. Continued use of our services after changes are posted constitutes acceptance of the revised terms.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="contact-card" aria-labelledby="questions-title">
+      <div class="eyebrow">Questions about these terms?</div>
+      <h2 id="questions-title">We're real people. Just reach out.</h2>
+      <p>Thread &amp; Oak Laundry Co. · Morrisville, NC</p>
+      <div class="contact-links">
+        <a href="mailto:info@threadandoak.com">info@threadandoak.com</a>
+        <a href="tel:+19194354608">(919) 435-4608</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Thread &amp; Oak Laundry Co. · Morrisville, NC
+  </footer>
+</body>
+</html>
